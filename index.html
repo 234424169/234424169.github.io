@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,71 +60,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-HandlerMapping" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/13/HandlerMapping/" class="article-date">
-  <time datetime="2017-08-13T07:30:11.190Z" itemprop="datePublished">2017-08-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HandlerMapping"><a href="#HandlerMapping" class="headerlink" title="HandlerMapping"></a>HandlerMapping</h2><h3 id="AbstractHandlerMapping"><a href="#AbstractHandlerMapping" class="headerlink" title="AbstractHandlerMapping"></a>AbstractHandlerMapping</h3><p>里面的interceptor有三个属性：<br>1、Interceptors 用于配置<br>2、mappedInterceptors 用于匹配url<br>3、adaptedInterceptors 在getHandler中获取  </p>
-<h4 id="getHandler实现"><a href="#getHandler实现" class="headerlink" title="getHandler实现"></a>getHandler实现</h4><p>通过getHandlerInternal获取handler，若没有则使用默认的handler，在配置文件中进行配置。然后初始化HandlerExecutionChain，遍历每个interceptor，然后将符合路径的拦截器添加到chain里。</p>
-<h3 id="AbstractUrlHandlerMapping"><a href="#AbstractUrlHandlerMapping" class="headerlink" title="AbstractUrlHandlerMapping"></a>AbstractUrlHandlerMapping</h3><p>通过URL去查找匹配的handle<br>首先通过getHandlerInternal方法作为入口，会先尝试在MAP中直接获取，但很多时候因为是模糊匹配，所以并不能直接获取到。接下来是patern匹配，与带*号的模式匹配。然后对结果进行排序，选第一个。  最后将两个拦截器（PathExposingHandlerInterceptor和UriTemplateVariablesHandlerInterceptor）加到链上。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/13/HandlerMapping/" data-id="cj6aev5r90000twuqe403f8ki" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-测试文章" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/13/测试文章/" class="article-date">
-  <time datetime="2017-08-13T07:29:29.000Z" itemprop="datePublished">2017-08-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/测试文章/">测试文章</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/13/测试文章/" data-id="cj6aev5tl0002twuq6qngm813" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -161,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/12/hello-world/" data-id="cj6aev5sv0001twuqxn2vi8yt" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/08/12/hello-world/" data-id="cj6aex9ek0000c8uq8wam0wa8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,17 +131,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2017/08/13/HandlerMapping/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/13/测试文章/">测试文章</a>
-          </li>
         
           <li>
             <a href="/2017/08/12/hello-world/">Hello World</a>
@@ -225,7 +152,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
