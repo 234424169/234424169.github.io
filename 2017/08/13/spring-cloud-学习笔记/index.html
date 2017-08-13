@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="eureka用于服务发现，分为服务端和客户端，服务端有可见的界面，客户端通过配置服务端地址进行注册
+rest+ribbonribbon用于负载均衡，可通过在eureka注册，然后通过restTemple去调用eureka的服务。
+feignweb客户端，调用远端服务可以写成本地调用的样子，特点是只需">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="陈子毅的博客"/>
+        <meta property="og:title" content="spring cloud 学习笔记"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Archiv - 陈子毅的博客</title>
+    <title>spring cloud 学习笔记 - 陈子毅的博客</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,62 +146,79 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archiv</h1>
+                <div class="post-heading">
+                    <h1>spring cloud 学习笔记</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-13
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/微服务/">#微服务</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/08/13/spring-cloud-学习笔记/">
-        <h1 class="post-title archive">
-            spring cloud 学习笔记
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-13
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/08/12/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-12
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="eureka"><a href="#eureka" class="headerlink" title="eureka"></a>eureka</h3><p>用于服务发现，分为服务端和客户端，服务端有可见的界面，客户端通过配置服务端地址进行注册</p>
+<h3 id="rest-ribbon"><a href="#rest-ribbon" class="headerlink" title="rest+ribbon"></a>rest+ribbon</h3><p>ribbon用于负载均衡，可通过在eureka注册，然后通过restTemple去调用eureka的服务。</p>
+<h3 id="feign"><a href="#feign" class="headerlink" title="feign"></a>feign</h3><p>web客户端，调用远端服务可以写成本地调用的样子，特点是只需一个注解和接口就可完成功能</p>
+<h3 id="hystrix"><a href="#hystrix" class="headerlink" title="hystrix"></a>hystrix</h3><p>断路器，当服务不可用时会调用失败函数，使用简单，只需增加注解和函数，另外有运维界面</p>
+<h3 id="zuul"><a href="#zuul" class="headerlink" title="zuul"></a>zuul</h3><p>路由，用于负载均衡，还有服务过滤的功能</p>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p>分为config server和config client<br>config server从git上拉取配置，也可从svn、file拉取，通过约定好的格式去获取对应的分支、环境、名称对应的配置文件，实现了配置文件的统一管理。<br>config client即通过一个简单的配置文件指定对应的config server拉取配置</p>
+<h3 id="bus"><a href="#bus" class="headerlink" title="bus"></a>bus</h3><p>消息总线，可用于动态不需重启地去更新配置信息</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
