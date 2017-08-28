@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="classloader类加载classloader的作用是将class文件加载到Jvm里去，作用时机有两个，显式的是通过class.forname()来动态加载，隐式则是执行new的过程。
+双亲委派模型要求除了顶层的Bootstrap class loader启动类加载器外，其他的类加载器都有自己的">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="人丑就该多读书"/>
+        <meta property="og:title" content="jvm"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>人丑就该多读书</title>
+    <title>jvm - 人丑就该多读书</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -143,126 +146,67 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>人丑就该多读书</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>jvm</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-23
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2017/08/23/jvm/">
-        <h2 class="post-title">
-            jvm
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-08-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/08/16/nginx相关/">
-        <h2 class="post-title">
-            nginx相关
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-08-16
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/08/15/springmvc-cookie相关/">
-        <h2 class="post-title">
-            springmvc cookie相关
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-08-15
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/08/13/static修饰符/">
-        <h2 class="post-title">
-            static修饰符
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-08-13
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/08/13/spring-cloud-学习笔记/">
-        <h2 class="post-title">
-            spring cloud 学习笔记
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-08-13
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/08/12/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-08-12
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h4 id="classloader类加载"><a href="#classloader类加载" class="headerlink" title="classloader类加载"></a>classloader类加载</h4><p>classloader的作用是将class文件加载到Jvm里去，作用时机有两个，显式的是通过class.forname()来动态加载，隐式则是执行new的过程。</p>
+<h5 id="双亲委派模型"><a href="#双亲委派模型" class="headerlink" title="双亲委派模型"></a>双亲委派模型</h5><p>要求除了顶层的Bootstrap class loader启动类加载器外，其他的类加载器都有自己的父类加载器。而且是通过继承的关系，而不是组合。<br>工作原理：<br>当加载一个类时，当前的ClassLoader会去先检查自己的缓存，如果有则直接返回，否则会委派给自己的父类,父类也采用同样的方法，直到Bootstrap ClassLoader。这样可以防止重复加载类。</p>
+<h4 id="运行时区域"><a href="#运行时区域" class="headerlink" title="运行时区域"></a>运行时区域</h4><ol>
+<li>PC计数器<br>线程私有，用于上下文切换</li>
+<li>java虚拟机栈<br>线程私有，与线程相对，记录线程的生命周期，栈帧。保存了基础类型，对象引用。</li>
+<li>本地方法栈<br>与java虚拟机栈类似，保存虚拟机用到的本地方法</li>
+<li>堆<br>线程共享，用于保存对象，由GC来管理内存，不用显式地去删除。堆分为新生代（New Generation）和旧生代(Old Generation)，再细致可分成Eden空间、From Survivor空间、To Survivor空间等。</li>
+<li>方法区（非堆）<br>线程共享，保存类的结构信息，如运行时常量池、成员变量、方法数据、构造函数。对应持久代（Permanent Generation）</li>
+<li>运行时常量池<br>是方法区的一部分，存放编译期生成的各种字面量和符号引用。</li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
