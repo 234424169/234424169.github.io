@@ -207,7 +207,21 @@
 <p>除此之外 还有健康检查、重试等功能</p>
 <h4 id="keepalived"><a href="#keepalived" class="headerlink" title="keepalived"></a>keepalived</h4><p>keepalived只要用于高可用和负载均衡<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">virtual_server 192.168.200.15 80 &#123;</div><div class="line">    delay_loop 30</div><div class="line">    lb_algo wrr</div><div class="line">    lb_kind NAT</div><div class="line">    persistence_timeout 50</div><div class="line">    protocol TCP</div><div class="line">    sorry_server 192.168.100.100 80</div><div class="line">    real_server 192.168.100.2 80 &#123;</div><div class="line">        weight 2</div><div class="line">        HTTP_GET &#123;</div><div class="line">        url &#123;</div><div class="line">        path /testurl/test.jsp</div><div class="line">        digest ec90a42b99ea9a2f5ecbe213ac9eba03</div><div class="line">        &#125;</div><div class="line">        url &#123;</div><div class="line">        path /testurl2/test.jsp</div><div class="line">        digest 640205b7b0fc66c1ea91c463fac6334c</div><div class="line">        &#125;</div><div class="line">        connect_timeout 3</div><div class="line">        nb_get_retry 3</div><div class="line">        delay_before_retry 2</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    real_server 192.168.100.3 80 &#123;</div><div class="line">        weight 1</div><div class="line">        HTTP_GET &#123;</div><div class="line">        url &#123;</div><div class="line">        path /testurl/test.jsp</div><div class="line">        digest 640205b7b0fc66c1ea91c463fac6334c</div><div class="line">        &#125;</div><div class="line">        connect_timeout 3</div><div class="line">        nb_get_retry 3</div><div class="line">        delay_before_retry 2</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如上面的例子，192.168.200.15是一个虚拟ip，通过访问这ip实际上是访问真实的ip组，当ip组的某一天挂掉，会自动切换到另一台</p>
-
+<p><div id="container"></div></p>
+<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: '234424169',
+  repo: '234424169.github.io',
+  oauth: {
+    client_id: 'da8a55099dc16cfd6279',
+    client_secret: '20610ae0e0241ff15509993aa66cd2f8d2085013',
+  },
+})
+gitment.render('container')
+</script>
 
                 
             </div>
