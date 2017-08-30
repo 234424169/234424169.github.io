@@ -10,6 +10,12 @@
 
     <!--Description-->
     
+        <meta name="description" content="垃圾收集算法
+标记-清除算法通过对对象进行标记后进行清除，不过这两个动作效率不高，另外会生产内存碎片。
+复制算法把内存划分两块，每次只用一块，当用完就把对象复制到另一边，再对一半的内存清理，这样只用到一半的内存，代价太高。
+标记-整理算法把对象向一端移动，直接清理掉端边界以外的内存。
+分代收集算法商">
+    
 
     <!--Author-->
     
@@ -18,7 +24,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="人丑就该多读书"/>
+        <meta property="og:title" content="GC"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +35,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2017/8 - 人丑就该多读书</title>
+    <title>GC - 人丑就该多读书</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,127 +148,86 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2017/8</h1>
+                <div class="post-heading">
+                    <h1>GC</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-30
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/jvm/">#jvm</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/08/30/GC/">
-        <h1 class="post-title archive">
-            GC
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-30
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/08/23/ClassLoader类加载/">
-        <h1 class="post-title archive">
-            ClassLoader类加载
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/16/nginx相关/">
-        <h1 class="post-title archive">
-            nginx相关
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-16
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/15/springmvc-cookie相关/">
-        <h1 class="post-title archive">
-            springmvc cookie相关
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-15
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/13/static修饰符/">
-        <h1 class="post-title archive">
-            static修饰符
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-13
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/13/spring-cloud-学习笔记/">
-        <h1 class="post-title archive">
-            spring cloud 学习笔记
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-13
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/12/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-12
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h5 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h5><ol>
+<li>标记-清除算法<br>通过对对象进行标记后进行清除，不过这两个动作效率不高，另外会生产内存碎片。</li>
+<li>复制算法<br>把内存划分两块，每次只用一块，当用完就把对象复制到另一边，再对一半的内存清理，这样只用到一半的内存，代价太高。</li>
+<li>标记-整理算法<br>把对象向一端移动，直接清理掉端边界以外的内存。</li>
+<li>分代收集算法<br>商用都使用这种，根据存活周期分成几块，一般分成新生代和老年代。新生代死去的对象多，剩下的使用复制算法，代价比较低。老生代剩下的对象多，则用另外两种算法。</li>
+</ol>
+<h5 id="内存分配和回收策略"><a href="#内存分配和回收策略" class="headerlink" title="内存分配和回收策略"></a>内存分配和回收策略</h5><p>大多数情况下，对象都在新生代Eden区分配，当空间不足，会发起一次Minor GC。<br>新生代GC（MinorGC）：指发生在新生代的垃圾回收动作。大多数对象消失的很快，所以MinorGC发生的很频繁，速度快。<br>老生代GC（MajorGC/FullGC）:指发生在老年代的GC，出现了MajorGC,经常会伴随MinorGC。速度很慢。<br>大对象进入老年代：大对象指长数组，如果直接进入Eden区会导致大量的复制收集内存，因此会制定参数让大对象直接进行老年代。<br>长期存活的对象进行老年代：会对对象进行年龄计数，在Eden出生并经过一次MinorGC后仍存活并且能被Survivor容纳会被移动到Survivor空间，并把对象设为1。在Survivor区每经过一次MinroGC则会增加一岁，到了15岁则会晋升到老年代。</p>
+<h5 id="如何定义垃圾"><a href="#如何定义垃圾" class="headerlink" title="如何定义垃圾"></a>如何定义垃圾</h5><p>通过可达性分析来判断对象是否存活。通过一系列“GC Roots”对象（虚拟机栈中引用的对象、类静态属性引用的对象、常量引用的对象、Native方法引用的对象）作为起始节点向下搜索。当GC Roots到这个对象不可达时，则证明对象不可用，会被回收。  </p>
+<ul>
+<li>强引用<br>类似Object obj = new Object()这类，不会被回收。</li>
+<li>软引用<br>描述还有用但非必须的对象，紧张时才会回收。  </li>
+<li>弱引用<br>强度比软引用更弱，在下次GC前会被回收。</li>
+<li>虚引用<br>只是用作回收时通知用。</li>
 </ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
