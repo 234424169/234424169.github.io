@@ -212,21 +212,7 @@
 <li>弱引用<br>强度比软引用更弱，在下次GC前会被回收。</li>
 <li>虚引用<br>只是用作回收时通知用。</li>
 </ul>
-<p><div id="container"></div></p>
-<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
-  owner: '234424169',
-  repo: '234424169.github.io',
-  oauth: {
-    client_id: 'da8a55099dc16cfd6279',
-    client_secret: '20610ae0e0241ff15509993aa66cd2f8d2085013',
-  },
-})
-gitment.render('container')
-</script>
+
 
                 
             </div>
@@ -235,6 +221,12 @@ gitment.render('container')
             
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+    <hr />
+    <h3>Kommentare:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
 
 
                 </div>
@@ -294,6 +286,18 @@ gitment.render('container')
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'chenziyi';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
