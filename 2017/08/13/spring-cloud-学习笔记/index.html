@@ -203,7 +203,21 @@ feignweb客户端，调用远端服务可以写成本地调用的样子，特点
 <h3 id="zuul"><a href="#zuul" class="headerlink" title="zuul"></a>zuul</h3><p>路由，用于负载均衡，还有服务过滤的功能</p>
 <h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p>分为config server和config client<br>config server从git上拉取配置，也可从svn、file拉取，通过约定好的格式去获取对应的分支、环境、名称对应的配置文件，实现了配置文件的统一管理。<br>config client即通过一个简单的配置文件指定对应的config server拉取配置</p>
 <h3 id="bus"><a href="#bus" class="headerlink" title="bus"></a>bus</h3><p>消息总线，可用于动态不需重启地去更新配置信息</p>
-
+<p><div id="container"></div></p>
+<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: '234424169',
+  repo: '234424169.github.io',
+  oauth: {
+    client_id: 'da8a55099dc16cfd6279',
+    client_secret: '20610ae0e0241ff15509993aa66cd2f8d2085013',
+  },
+})
+gitment.render('container')
+</script>
 
                 
             </div>
